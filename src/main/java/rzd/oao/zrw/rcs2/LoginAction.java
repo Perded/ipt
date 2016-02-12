@@ -27,23 +27,24 @@ public class LoginAction extends ActionSupport{
     }
 
     public String execute() {
-        //if ("Admin".equals(getUserName()) || "1234".equals(getPassword())) {
+
         DatabaseConnector connector = new DatabaseConnector();
         connector.connect();
         if (connector.checkUser(getUserName(), getPassword())){
             Map session = ActionContext.getContext().getSession();
             session.put("login","true");
             session.put("context", new Date());
+            connector.disconnect();
             return SUCCESS;
         }else {
-              return INPUT;
+            connector.disconnect();
+            return INPUT;
         }
     }
     public void validate() {
-//        if ("Admin".equals(getUserName()) || "1234".equals(getPassword())){
-//        }else addActionError("Incorrect Login or Password");
         DatabaseConnector connector = new DatabaseConnector();
         connector.connect();
+
         if (connector.checkUser(getUserName(), getPassword())){
 
         }else{

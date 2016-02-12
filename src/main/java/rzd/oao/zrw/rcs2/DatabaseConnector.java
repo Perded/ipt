@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class DatabaseConnector {
@@ -26,23 +28,18 @@ public class DatabaseConnector {
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            return false;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
         } catch (IllegalAccessException e) {
             e.printStackTrace();
-            return false;
         } catch (InstantiationException e) {
             e.printStackTrace();
-            return false;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            return false;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return false;
     }
 
     public void disconnect(){
@@ -66,8 +63,23 @@ public class DatabaseConnector {
             else return false;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return false;
+    }
+    public Map<String,String> listTables(){
+        Map<String,String> list = new HashMap<String, String>();
+        String selectStatement = "SELECT * FROM tnames";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(selectStatement);
+            while (resultSet.next()){
+               list.put(resultSet.getString(0), resultSet.getString(1));
+            }
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

@@ -1,21 +1,22 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<table cellSpacing=0 cellPadding=0 width="100%" border="2">
+<table align="center" cellSpacing=0 cellPadding=0 width="700px" border="3">
     <tr>
-        <td align="center" width="30px"> № </td>
-        <td align="center">Наименование таблицы</td>
-        <td align="center" width="100px">Функции</td>
+        <td width="30px"> № </td>
+        <td>Наименование таблицы</td>
+        <td width="100px">Функция</td>
     </tr>
-    <s:iterator begin="1" end="3">
-    <tr>
-        <td>wer</td>
-        <td>werwerw</td>
-        <td width="100px">
-            <a href="/index.jsp">Edit</a>
-            <a href="/index.jsp">neEdin</a>
-            <a href="/index.jsp">uEdin</a>
-            <a href="/index.jsp">deledin</a>
-        </td>
-    </tr>
+    <s:iterator value="tables">
+        <tr>
+            <td align="center">
+                <s:property value="id"/>
+            </td>
+            <td align="left">
+              <a href="/tAction?idTable=<s:property value="id"/>"><s:property value="name"/></a>
+            </td>
+            <td align="left">
+                dfgsdfsefsdf
+            </td>
+        </tr>
     </s:iterator>
 </table>

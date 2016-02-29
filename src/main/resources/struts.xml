@@ -11,5 +11,8 @@
           <result name="success">/home.jsp</result>
           <result name="input">/login.jsp</result>
       </action>
+        <action name="tAction" class="rzd.oao.zrw.rcs2.ListTableAction">
+            <result>/viewtable.jsp</result>
+        </action>
     </package>
 </struts>

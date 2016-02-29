@@ -4,7 +4,8 @@
     <s:iterator value="lstTable">
     <tr>
         <s:iterator value="row">
-        <td><s:property/></td>
+            <td>Edit </td>
+            <td><s:property/></td>
         </s:iterator>
     </tr>
 </s:iterator>

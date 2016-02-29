@@ -46,11 +46,11 @@ public class DataAccess {
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             bdTableName = resultSet.getString(1);
-            PreparedStatement statement1 = DBConnector.getPreparedStatment("SELECT * FROM " + bdTableName);
-            ResultSet resultSet1 = statement1.executeQuery();
-            while (resultSet1.next()){
-                for (int i = 1; i < resultSet1.getMetaData().getColumnCount(); i++) {
-                    cells.add(resultSet1.getString(i));
+            PreparedStatement tableStatement = DBConnector.getPreparedStatment("SELECT * FROM " + bdTableName);
+            ResultSet tableResultSet = tableStatement.executeQuery();
+            while (tableResultSet.next()){
+                for (int i = 1; i < tableResultSet.getMetaData().getColumnCount(); i++) {
+                    cells.add(tableResultSet.getString(i));
                 }
                 rows.add(new Table(cells));
             }
@@ -60,46 +60,4 @@ public class DataAccess {
 
         return rows;
     }
-/*    public static List<Table> listTable(String tname){
-        List<String> listT = new ArrayList<String>();
-        List<Table> fullTable = new ArrayList<Table>();
-        try {
-           // tname = "iptn001";
-            PreparedStatement statement = DBConnector.getPreparedStatment("SELECT * FROM "+ tname);
-           // statement.setString(1, tname);
-            ResultSet resultSet = statement.executeQuery();
-            resultSet.getMetaData().getColumnCount();
-            System.out.println(resultSet.getMetaData().getColumnCount());
-            while (resultSet.next()){
-                for (int i = 1; i < resultSet.getMetaData().getColumnCount(); i++) {
-                    listT.add(resultSet.getString(i));
-                }
-                fullTable.add(new Table(listT));
-            }
-            return fullTable;
-        } catch (SQLException e) {
-            System.out.println("!!!!!!!!!! " +tname);
-            e.printStackTrace();
-        }
-        return null;
-    }
-/*    public static List<Table> vwTable(String id){
-        List<Table> list = new ArrayList<Table>();
-        PreparedStatement statement = DBConnector.getPreparedStatment("SELECT * FROM ?")
-        try {
-            statement.setString(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()){
-                for (int i = 1; i < resultSet.getFetchSize(); i++) {
-
-                    Table table = new Table(resultSet.getString(i));
-                    list.add(tables);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return list;
-    } */
 }

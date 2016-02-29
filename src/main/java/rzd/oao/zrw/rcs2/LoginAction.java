@@ -43,19 +43,16 @@ public class LoginAction extends ActionSupport {
 
     public String execute() {
         tables = DataAccess.listNamesOFTables();
-            return SUCCESS;
+        return SUCCESS;
     }
     public void validate() {
-
         if (DataAccess.checkUser(getUserName(), getPassword())){
             Map session = ActionContext.getContext().getSession();
             session.put("login","true");
             session.put("context", new Date());
-
         }else{
             addActionError("Неверный логин или пароль");
         }
-
     }
 
 }

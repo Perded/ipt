@@ -9,9 +9,6 @@ import java.util.Properties;
 
 
 public class DBConnector {
- //   private static final String URL = "jdbc:mysql://10.122.111.151:3306/ipTables";
- //   private static final String USERNAME = "iptablesuser";
- //   private static final String PASSWORD = "123";
     public void initProp(){
         Properties property = new Properties();
         try {
@@ -35,7 +32,6 @@ public class DBConnector {
                     property.getProperty("url"),
                     property.getProperty("user"),
                     property.getProperty("password"));
-//            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             statement = connection.prepareStatement(sql);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

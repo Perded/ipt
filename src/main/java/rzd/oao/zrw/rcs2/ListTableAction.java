@@ -10,6 +10,16 @@ import java.util.List;
  */
 public class ListTableAction extends ActionSupport {
     private String idTable;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     List<Table> lstTable = new ArrayList<Table>();
 
     public List<Table> getLstTable() {

@@ -1,16 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-
-<table cellSpacing=0 cellPadding=0 width="100%" border="0">
-    <tr>
-        выафывафывафываф
-        ыва
-        ф
-        ыва
-        ф
-        ыва
-        ф
-
-    </tr>
-</table>
-
-
+<div id="mainmenu">
+    <div class="menuitem"><a href=""><img src="images/home.png"></a></div>
+    <div class="menuitem"><a href=""><img src="images/users.png"></a></div>
+    <div class="menuitem"><a href=""><img src="images/add.png"></a></div>
+</div>

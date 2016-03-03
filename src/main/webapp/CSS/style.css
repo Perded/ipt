@@ -4,18 +4,41 @@
 }
 html,
 body {
+    background-color: white;
     height: 100%;
 }
+img{
+    border: none;
+}
+
 .wrapper {
     position: relative;
     min-height: 100%;
 }
 .header {
-    padding-bottom: 90px;
-    background-color: aqua;
+    height: 71px;
+    background: white url("images/logo.png") no-repeat;
+    border-bottom: solid 5px #cccccc;
 }
-.mainmenu {
+#mainmenu {
+    width: 300px;
+    margin: 0 0 0 283px;
 }
+
+.menuitem {
+    display: block;
+    padding-top: 10px;
+    padding-left: 15px;
+    width: 71px;
+    height: 71px;
+    float: left;
+    text-decoration: none;
+}
+
+.menuitem:hover {
+    background: #ff9999;
+}
+
 .content {
     padding: 10px;
 }

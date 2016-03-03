@@ -40,12 +40,13 @@ public class DataAccess {
         List<String> cells = new ArrayList<String>();
         List<Table> rows = new ArrayList<Table>();
         String bdTableName;
-        PreparedStatement statement = DBConnector.getPreparedStatment("SELECT tablename FROM tnames WHERE id = ?");
+
+        PreparedStatement statement = DBConnector.getPreparedStatment("SELECT * FROM tnames WHERE id = ?");
         try {
             statement.setString(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
-            bdTableName = resultSet.getString(1);
+            bdTableName = resultSet.getString(2);
             PreparedStatement tableStatement = DBConnector.getPreparedStatment("SELECT * FROM " + bdTableName);
             ResultSet tableResultSet = tableStatement.executeQuery();
             while (tableResultSet.next()){

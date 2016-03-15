@@ -61,4 +61,13 @@ public class DataAccess {
 
         return rows;
     }
+/*    public static List<String> listOfRow(String id, String tableName){
+        List<String> list = new ArrayList<String>();
+
+        PreparedStatement statement = DBConnector.getPreparedStatment("SELECT * FROM " + tableName);
+
+        }
+        }
+*/
+
 }

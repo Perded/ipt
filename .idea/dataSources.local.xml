@@ -7,5 +7,10 @@
       <schema-pattern>ipTables.*</schema-pattern>
       <default-schemas>ipTables.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - ipTables@10.122.111.151 [2]" uuid="3c565cbd-8d1f-46fb-a8d6-0c9d9f5b24d3">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>iptablesuser</user-name>
+    </data-source>
   </component>
 </project>

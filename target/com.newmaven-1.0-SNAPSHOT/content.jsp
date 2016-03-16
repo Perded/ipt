@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<div class="content">
+<div class="main">
 <table cellspacing="0">
     <tr>
-            <td width="30px" align="center" nowrap><b>№</b></td>
+            <td width="30px" align="center" wrap><b>№</b></td>
             <td width="550px" align="left" nowrap><b>Наименование таблицы</b></td>
             <td width="120px" align="center" nowrap><b>Функция</b></td>
     </tr>

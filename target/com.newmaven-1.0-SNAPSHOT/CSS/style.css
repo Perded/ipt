@@ -12,8 +12,9 @@ img{
 }
 
 .wrapper {
-    position: relative;
-    min-height: 100%;
+    display: table;
+    margin: 0 auto;
+    height: 100%;
 }
 .header {
     height: 71px;
@@ -40,15 +41,30 @@ img{
 }
 
 .content {
-    padding: 10px;
+    display: table-row;
+    height: 100%;
+
+}
+.main {
+    font-size: 14px;
+    padding: 15px 0px 15px 10px;
+    background-color: #f0ffff;
+    float:left;
+    width: 100%;
 }
 
-.content table {
-    table-layout: fixed;
+.main table {
+    text-align: left;
+    table-layout:auto;
+    border: solid 1px lightgray;
+    background: #fffff0;
+    border-collapse: collapse;
 }
 
-.content td {
+.main td {
     padding: 5px 10px 5px 10px;
+    border-bottom: solid 1px lightgray;
+    border-top: solid 1px lightgray;
 }
 
 #viewtable{
@@ -56,7 +72,7 @@ img{
     padding: 15px 0px 15px 10px;
     background-color: #f0ffff;
     float:left;
-    width: 98%;
+    width: 100%;
     display:table;
 }
 
@@ -86,7 +102,7 @@ img{
     padding: 15px 0px 15px 10px;
     background-color: #f0ffff;
     float:left;
-    width: 98%;
+    width: 100%;
     display:table;
 }
 
@@ -114,7 +130,7 @@ img{
     color: darkblue;
     font-size: 16px;
     font-weight: bold;
-    width: 99%;
+    width: 100%;
 
 }
 
@@ -123,9 +139,6 @@ img{
     font-size: 12px;
     text-decoration: none;
     font-family: Arial, Helvetica, Sans-serif;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     width: 100%;
     height: 80px;
     padding: 10px 10px 10px 10px;

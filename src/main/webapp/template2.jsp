@@ -12,7 +12,7 @@
 <div class="wrapper">
 
     <div class="header"><tiles:insert attribute="header"/></div>
-
+    <div class="mainmenu"><tiles:insert attribute="menu"/> </div>
     <div class="content"><tiles:insert attribute="content"/> </div>
 
     <div class="footer"><tiles:insert attribute="footer"/> </div>

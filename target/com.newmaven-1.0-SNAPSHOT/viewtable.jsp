@@ -3,7 +3,7 @@
 <jsp:include page="/loginCheck.jsp" />
 
 
-<tiles:insert page="template2.jsp" flush="true">
+<tiles:insert page="template3.jsp" flush="true">
     <tiles:put name="title" value="Просмотр" />
     <tiles:put name="header" value="header.jsp" />
     <tiles:put name="menu" value="menu.jsp" />

@@ -1,0 +1,44 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+html,body {
+    margin:0;
+    padding:0;
+}
+
+body {
+}
+
+
+
+#container {
+    width:1008px;
+    margin:0 auto;
+    text-align:left;
+
+}
+
+
+.header {
+    height:79px;
+    margin:0;
+}
+
+.content {
+    float:left;
+    width:100%;
+}
+
+
+
+.footer {
+    height:70px;
+    clear:left;
+    width:100%;
+    background: royalblue;
+}
+
+
+

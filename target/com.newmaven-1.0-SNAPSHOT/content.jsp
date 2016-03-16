@@ -3,9 +3,9 @@
 <div class="main">
 <table cellspacing="0">
     <tr>
-            <td width="30px" align="center" wrap><b>№</b></td>
-            <td width="550px" align="left" nowrap><b>Наименование таблицы</b></td>
-            <td width="120px" align="center" nowrap><b>Функция</b></td>
+            <td width="30px" align="center"><b>№</b></td>
+            <td width="550px" align="left"><b>Наименование таблицы</b></td>
+            <td width="120px" align="center"><b>Функция</b></td>
     </tr>
     <s:iterator value="tables">
         <tr>

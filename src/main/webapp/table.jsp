@@ -11,25 +11,28 @@
     </tr>
     <% int i=1; %>
     <s:iterator value="lstTable">
-    <% if (i % 2 != 0) {%>
-    <tr class="even">
+        <% if (i % 2 != 0) {%>
+            <tr class="even">
         <%} else {%>
-        <tr>
+            <tr>
         <%}%>
-        <td><a href="/edit?id=<%=i%>&tableId=<s:property value="idTable"/>">Edit</a></td>
-        <% int j=1; %>
-        <s:iterator value="row">
-            <% if (j % 2 != 0) {%>
-            <td class="even">
-                        <%} else {%>
             <td>
-            <%}%>
-            <s:property/></td>
-            <%++j;%>
-        </s:iterator>
-    </tr>
+                <a href="/edit?id=<%=i%>&tableId=<s:property value="idTable"/>">Edit</a>
+            </td>
+            <% int j=1; %>
+            <s:iterator value="row">
+                <% if (j % 2 != 0) {%>
+                    <td class="even">
+                <%} else {%>
+                    <td>
+                <%}%>
+                    <s:property/>
+                    </td>
+                <%++j;%>
+            </s:iterator>
+            </tr>
         <%++i;%>
-</s:iterator>
+    </s:iterator>
     <tr>
         <th colspan="2">
             <input type="button" value="Назад" onclick="history.back()"/>

@@ -18,13 +18,16 @@
             <% int i=1; %>
             <s:iterator value="allCells">
                 <% if (i % 2 != 0) {%>
-                <tr class="even">
-                            <%} else {%>
-                <tr>
-                            <%}%>
-                    <td width="100px">-</td>
-                    <td><input  style="height:30px" size="50" type="text" name="<s:property/>" value="<s:property/>"/></td>
-                </tr>
+                    <tr class="even">
+                <%} else {%>
+                    <tr>
+                <%}%>
+                        <td width="100px">-</td>
+                        <td>
+                            <input  style="height:30px" size="50" type="text" name="<s:property/>"
+                                value="<s:property/>"/>
+                        </td>
+                    </tr>
                 <%++i;%>
             </s:iterator>
                 <tr>

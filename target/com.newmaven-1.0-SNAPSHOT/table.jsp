@@ -2,7 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <div id="viewtable">
-    <div class="title"> <s:property value="name"/></div>
+    <div class="title"> <s:property value="tblName"/></div>
 <table align="center" cellspacing="0" cellpadding="0">
     <tr>
         <th colspan="2">
@@ -16,9 +16,7 @@
         <%} else {%>
             <tr>
         <%}%>
-            <td>
-                <a href="/edit?id=<%=i%>&tableId=<s:property value="idTable"/>">Edit</a>
-            </td>
+        <td><%=i%></td>
             <% int j=1; %>
             <s:iterator value="row">
                 <% if (j % 2 != 0) {%>
@@ -26,11 +24,17 @@
                 <%} else {%>
                     <td>
                 <%}%>
-                    <s:property/></td>
-                    <%++j;%>
+                    <s:property/>
+                    </td>
+                <%++j;%>
             </s:iterator>
+        <td>
+            <a href="/edit?id=<%=i%>&tableId=<s:property value="idTable"/>"><img src="images/delete.png"/></a>
+            <a href="/edit?id=<%=i%>&tableId=<s:property value="idTable"/>"><img src="images/delete.png"/></a>
+            <a href="/edit?id=<%=i%>&tableId=<s:property value="idTable"/>"><img src="images/delete.png"/></a>
+        </td>
             </tr>
-    <%++i;%>
+        <%++i;%>
     </s:iterator>
     <tr>
         <th colspan="2">

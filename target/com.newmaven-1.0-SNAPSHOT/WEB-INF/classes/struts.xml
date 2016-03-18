@@ -7,15 +7,23 @@
 <struts>
     <constant name="struts.devMode" value="true" />
     <package name="MyStruts" extends="struts-default" >
-      <action name="loginAction" class="rzd.oao.zrw.rcs2.LoginAction">
+        <interceptors>
+            <interceptor name="myinterceptor"
+                         class="rzd.oao.zrw.rcs2.Controllers.MyInterceptor" />
+        </interceptors>
+      <action name="loginAction" class="rzd.oao.zrw.rcs2.Controllers.LoginAction">
           <result name="success">/home.jsp</result>
           <result name="input">/login.jsp</result>
       </action>
-        <action name="view" class="rzd.oao.zrw.rcs2.ListTableAction">
+        <action name="view" class="rzd.oao.zrw.rcs2.Controllers.ListTableAction">
             <result>/viewtable.jsp</result>
         </action>
-        <action name="edit" class="rzd.oao.zrw.rcs2.EditTableRowAction">
+        <action name="edit" class="rzd.oao.zrw.rcs2.Controllers.EditTableRowAction">
             <result>/edittable.jsp</result>
+        </action>
+        <action name="save" class="rzd.oao.zrw.rcs2.Controllers.SaveRowTableAction">
+            <interceptor-ref name="myinterceptor" />
+            <result name="success">/123.jsp</result>
         </action>
     </package>
 </struts>

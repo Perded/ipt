@@ -7,7 +7,8 @@
 <body>
         <div id="edittable">
             <div class="title">Редактирование данных</div>
-            <form>
+            <form method="get" action="save">
+                <input type="hidden" name="id" value="1"/>
             <table align="center" cellpadding="0" cellspacing="0">
                 <tr>
                     <th colspan="2">
@@ -24,7 +25,7 @@
                 <%}%>
                         <td width="100px">-</td>
                         <td>
-                            <input  style="height:30px" size="50" type="text" name="<s:property/>"
+                            <input style="height:30px" size="50" type="text" name="field<%=i%>"
                                 value="<s:property/>"/>
                         </td>
                     </tr>

@@ -1,5 +1,8 @@
 package rzd.oao.zrw.rcs2;
 
+import rzd.oao.zrw.rcs2.Models.Table;
+import rzd.oao.zrw.rcs2.Models.Tables;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,7 +40,7 @@ public class DataAccess {
     }
 
     public static List<Table> viewTable(String id){
-        List<String> cells = new ArrayList<String>();
+      //  List<String> cells = new ArrayList<String>();
         List<Table> rows = new ArrayList<Table>();
         String bdTableName;
 
@@ -50,7 +53,8 @@ public class DataAccess {
             PreparedStatement tableStatement = DBConnector.getPreparedStatment("SELECT * FROM " + bdTableName);
             ResultSet tableResultSet = tableStatement.executeQuery();
             while (tableResultSet.next()){
-                for (int i = 1; i < tableResultSet.getMetaData().getColumnCount(); i++) {
+                List<String> cells = new ArrayList<String>();
+                for (int i = 1; i < tableResultSet.getMetaData().getColumnCount()+1; i++) {
                     cells.add(tableResultSet.getString(i));
                 }
                 rows.add(new Table(cells));

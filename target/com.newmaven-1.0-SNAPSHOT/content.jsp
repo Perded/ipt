@@ -13,7 +13,7 @@
                 <s:property value="id"/>
             </td>
             <td align="left" nowrap>
-              <a href="/view?idTable=<s:property value="id"/>&name=<s:property value="name"/>"><s:property value="name"/></a>
+                <a href="/view?idTable=<s:property value="id"/>"><s:property value="name"/></a>
             </td>
             <td align="center" nowrap>
                 <a href=""><img src="images/view.png"/></a>

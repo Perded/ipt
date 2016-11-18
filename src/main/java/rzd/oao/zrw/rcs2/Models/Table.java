@@ -1,22 +1,29 @@
 package rzd.oao.zrw.rcs2.Models;
 
-import java.util.List;
-
-/**
- * Created by KuzmichevVB on 19.02.2016.
- */
 public class Table {
-    private List<String> row;
+    private String id;
+    private String name;
 
-    public List<String> getRow() {
-        return row;
+    public String getId() {
+        return id;
     }
 
-    public void setRow(List<String> row) {
-        this.row = row;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public Table(List<String> row) {
-        this.row = row;
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Table(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+
 }

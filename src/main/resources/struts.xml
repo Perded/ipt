@@ -5,25 +5,120 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.action.excludePattern" value="/savePermitions, /logout, /export"/>
     <constant name="struts.devMode" value="true" />
-    <package name="MyStruts" extends="struts-default" >
-        <interceptors>
-            <interceptor name="myinterceptor"
-                         class="rzd.oao.zrw.rcs2.Controllers.MyInterceptor" />
-        </interceptors>
-      <action name="loginAction" class="rzd.oao.zrw.rcs2.Controllers.LoginAction">
-          <result name="success">/home.jsp</result>
-          <result name="input">/login.jsp</result>
+    <constant name="struts.multipart.saveDir" value="/tmp190"/>
+    <constant name="struts.custom.i18n.resources" value="global" />
+    <package name="iptables" extends="struts-default" >
+      <action name="login"  class="rzd.oao.zrw.rcs2.Controllers.LoginAction">
+          <result name="success">frm_main.jsp</result>
+          <result name="input">login.jsp</result>
       </action>
-        <action name="view" class="rzd.oao.zrw.rcs2.Controllers.ListTableAction">
-            <result>/viewtable.jsp</result>
+        <action name="view" class="rzd.oao.zrw.rcs2.Controllers.ViewTableAction">
+            <result name="success">frm_viewtable.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
         </action>
-        <action name="edit" class="rzd.oao.zrw.rcs2.Controllers.EditTableRowAction">
-            <result>/edittable.jsp</result>
+        <action name="edit" class="rzd.oao.zrw.rcs2.Controllers.EditAction">
+            <result name="success">frm_edittable.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
         </action>
-        <action name="save" class="rzd.oao.zrw.rcs2.Controllers.SaveRowTableAction">
-            <interceptor-ref name="myinterceptor" />
-            <result name="success">/123.jsp</result>
+        <action name="save" class="rzd.oao.zrw.rcs2.Controllers.SaveAction">
+            <result name="success">save.jsp</result>
+        </action>
+        <action name="newrow" class="rzd.oao.zrw.rcs2.Controllers.EditNewRowAction">
+            <result name="success">frm_addrow.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="addrow" class="rzd.oao.zrw.rcs2.Controllers.SaveNewRowAction">
+            <result name="success">save.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="delete" class="rzd.oao.zrw.rcs2.Controllers.DeleteAction">
+            <result name="success">save.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="newtable" class="rzd.oao.zrw.rcs2.Controllers.NewtableAction">
+            <result name="success">frm_addtable.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="savenewtable" class="rzd.oao.zrw.rcs2.Controllers.SaveNewTableAction">
+            <result name="success">index.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="index" class="rzd.oao.zrw.rcs2.Controllers.IndexAction">
+            <result name="success">frm_main.jsp</result>
+            <result name="error">login.jsp</result>
+        </action>
+        <action name="renametable" class="rzd.oao.zrw.rcs2.Controllers.RenameTableAction">
+            <result name="success">frm_renametable.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="deletetable" class="rzd.oao.zrw.rcs2.Controllers.DeleteTableAction">
+            <result name="success">index.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="savetablename" class="rzd.oao.zrw.rcs2.Controllers.SaveNameTableAction">
+            <interceptor-ref name="basicStack"/>
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">500000</param>            </interceptor-ref>
+            <interceptor-ref name="validation"/>
+            <interceptor-ref name="workflow"/>
+
+            <result name="success">index.jsp</result>
+            <result name="input">frm_addtable.jsp</result>
+        </action>
+        <action name="listusers" class="rzd.oao.zrw.rcs2.Controllers.ListUsersAction">
+            <result name="success">frm_userlist.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="removeuser" class="rzd.oao.zrw.rcs2.Controllers.RemoveUserAction">
+            <result name="success">saveuser.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="newuser" class="rzd.oao.zrw.rcs2.Controllers.NewUserAction">
+            <result name="success">frm_newuser.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="savenewuser" class="rzd.oao.zrw.rcs2.Controllers.SaveNewUserAction">
+            <result name="success">saveuser.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="edituser" class="rzd.oao.zrw.rcs2.Controllers.EditUserAction">
+            <result name="success">frm_edituser.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="saveuser" class="rzd.oao.zrw.rcs2.Controllers.SaveUserAction">
+            <result name="success">saveuser.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="permitions" class="rzd.oao.zrw.rcs2.Controllers.EditUserPermitions">
+            <result name="success">frm_editpermitions.jsp</result>
+            <result name="error">accesserror.jsp</result>
+            <result name="input">accesserror.jsp</result>
+        </action>
+        <action name="about" class="rzd.oao.zrw.rcs2.Controllers.AboutAction">
+            <result name="success">frm_about.jsp</result>
+        </action>
+        <action name="search" class="rzd.oao.zrw.rcs2.Controllers.SearchAction">
+            <result name="success">frm_search.jsp</result>
+        </action>
+        <action name="reports" class="rzd.oao.zrw.rcs2.Controllers.ReportsAction">
+            <result name="success">frm_reports.jsp</result>
         </action>
     </package>
 </struts>

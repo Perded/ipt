@@ -2,8 +2,8 @@ package rzd.oao.zrw.rcs2.Controllers;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import rzd.oao.zrw.rcs2.DataAccess;
-import rzd.oao.zrw.rcs2.Models.Tables;
+import org.apache.log4j.Logger;
+import rzd.oao.zrw.rcs2.Models.Table;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,15 +14,39 @@ import java.util.Map;
  * Created by KuzmichevVB on 16.02.2016.
  */
 public class LoginAction extends ActionSupport {
+    private static final Logger log = Logger.getLogger(LoginAction.class.getName());
+    private int userId;
     private String userName;
     private String password;
-    List<Tables> tables = new ArrayList<Tables>();
+    private Map<Integer,Integer> permitions;
 
-    public List<Tables> getTables() {
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public Map<Integer, Integer> getPermitions() {
+        return permitions;
+    }
+
+    public void setPermitions(Map<Integer, Integer> permitions) {
+        this.permitions = permitions;
+    }
+
+    public void setTables(List<Table> tables) {
+        this.tables = tables;
+    }
+
+    List<Table> tables = new ArrayList<Table>();
+
+    public List<Table> getTables() {
         return tables;
     }
 
-    public void setTables(List<Tables> tables) {
+    public void setTables(ArrayList<Table> tables) {
         this.tables = tables;
     }
 
@@ -44,16 +68,23 @@ public class LoginAction extends ActionSupport {
 
 
     public String execute() {
-        tables = DataAccess.listNamesOFTables();
+        tables = DataAccess.listNamesOfTables();
         return SUCCESS;
+
     }
     public void validate() {
+        setUserId(DataAccess.getUserId(getUserName()));
         if (DataAccess.checkUser(getUserName(), getPassword())){
             Map session = ActionContext.getContext().getSession();
+            permitions = DataAccess.listPermitions(DataAccess.getUserId(getUserName()));
             session.put("login","true");
             session.put("context", new Date());
+            session.put("userid", getUserId());
+
+            log.info("Пользователь " + getUserName() + " успешно авторизован.");
         }else{
             addActionError("Неверный логин или пароль");
+            log.error("Неверный логин или пароль (" + getUserName() + ").");
         }
     }
 

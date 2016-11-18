@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="MavStruts:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="com.newmaven-1.0-SNAPSHOT.war">
+    <root id="archive" name="iptables-0.9-SNAPSHOT.war">
       <element id="artifact" artifact-name="MavStruts:war exploded" />
     </root>
   </artifact>

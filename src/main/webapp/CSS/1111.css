@@ -1,0 +1,162 @@
+* {margin: 0; padding: 0;}
+body {
+    background: #D6EAFA;
+}
+html,body {
+    height: 100%;
+}
+img{
+    border: none;
+}
+
+
+.wrapper { /* main block */
+    background: #D6EAFA;
+    min-height: 100%;
+}
+* html .wrapper { /* Hack for ie6 */
+    height: 100%;
+}
+
+.header {
+    background: white url("images/logo.png") no-repeat;
+    border-bottom: solid 5px #cccccc;
+}
+
+#mainmenu {
+    width: 500px;
+    margin: 0 0 0 283px;
+}
+
+.menuitem {
+}
+
+.menuitem a{
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px 12px 10px;
+}
+
+.menuitem a:hover{
+    background: #D6EAFA;
+}
+
+.login{
+    font-size: 14px;
+    background-color: #D6EAFA;
+    display: table;
+    margin: 150px auto;
+}
+
+.login table{
+    text-align: left;
+    border: solid 10px #3F8FD2;
+    background-color: white;
+    border-collapse: collapse;
+}
+.login td,input{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.viewtable{
+    font-size: 14px;
+    padding: 15px 0px 15px 10px;
+    background-color: #D6EAFA;
+    float:left;
+    width: 100%;
+    display:table;
+}
+
+
+.viewtable TR.even {
+    background: whitesmoke;
+    min-height: 15px;
+}
+
+.viewtable TD {
+    border-bottom: solid 5px lightgray;
+    border-right: dashed 2px lightgray;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+
+.viewtable TD.even {
+    color: #043C6B;
+    text-align: center;
+}
+
+
+.viewtable input{
+    font-size: 18px;
+}
+
+.viewtable table{
+    text-align: left;
+    table-layout:auto;
+    border: solid 10px #3F8FD2;
+    background-color: white;
+    border-collapse: collapse;
+}
+.viewtable a, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+
+.edittable{
+    font-size: 14px;
+    padding: 15px 0px 15px 10px;
+    background-color: #D6EAFA;
+    float:left;
+    width: 100%;
+    display:table;
+}
+
+.edittable input{
+    font-size: 18px;
+
+}
+
+.edittable table{
+    text-align: left;
+    table-layout:auto;
+    border: solid 10px #3F8FD2;
+    background: white;
+}
+
+.edittable TR.even {
+    background: whitesmoke;
+}
+
+.edittable TD {
+    padding: 5px;
+    border-bottom: solid 5px lightgray;
+
+}
+
+.title { /* Title of content pages */
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: #D6EAFA;
+    color: #043C6B;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+.helpFooter { /* Splits main content from footer */
+    height: 44px; /* Same as footer */
+}
+.footer { /* footer */
+    height: 44px;
+    margin-top: -44px;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, Sans-serif;
+    background: #cccccc;
+    padding-left: 10px;
+}
